@@ -34,6 +34,52 @@
 
     let sum = add2(5,5); //efekt zwrócenia funkcji do nowej zmiennej
     result2.innerHTML += "Suma = " + sum + "</br>";
+
+//div id return3
+    let result3 = document.getElementById("result3");
+
+    function fn(name, ...nums)
+    {
+        console.log(name, ...nums);
+    }
+
+    fn('liczby', 3,5,6);
+
+//div id return4
+
+    function fn(a, b, c){
+        if(a > 5){
+            return 'stop'; /// 1< 5 stop
+        }
+
+        return a + b + c; // to juz się nie wykonuje
+
+    }
+
+    const res = fn(1, 2, 3);
+    console.log(res);
+
+//div id return5  
+
+    [1, 2, 3].forEach(function(item) {
+        console.log(item);               //funkcja anonimowa
+    });
+
+// div id return6
+
+    const printInfo = function(el){
+        console.log(el)
+    };
+
+    [1, 2, 3].forEach( printInfo );  //anonimowe wyrażenie funkcyjne
+
+    // [1, 2, 3].forEach(function(el){
+    //     console.log(el);                /// to jest to samo
+    // } );                             
+
+
+
+  
     // alert(add2(10,30))
 
     // rekurencja // funkcja rekurencyjna wywołuje wewnątrz swego ciała samą siebie
