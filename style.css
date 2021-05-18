@@ -1,12 +1,12 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
 
-.box{
-    
-    
-    color: blue;
-    border: 2px solid black;
-}
+ 
+ .p{
+     float: left;
+     line-height: 80%;
+     font-size: 40px;
+     
+   
+ }
+ 
+ 
+ 

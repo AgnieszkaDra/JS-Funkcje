@@ -73,6 +73,94 @@
 
     [1, 2, 3].forEach( printInfo );  //anonimowe wyrażenie funkcyjne
 
+// div id return7
+
+    function isEven(num){
+        if(num %2 === 0){
+            return true;
+        }
+
+            return false;
+    }
+
+    function showEvenNumbers(start, stop){
+        for(let i=start; i < stop; i++){
+            if(isEven(1)){ 
+            console.log(i + 'jest parzysta');
+            }
+        }
+    }
+
+    showEvenNumbers(1, 10);
+
+// div id return8
+
+    function getUserInput(messageForUser){
+        const userInput = prompt(messageForUser)
+                return userInput;
+        
+    }
+
+    const fn1 = getUserInput;
+
+    const inputFromUser = fn1('Ile masz lat?');
+    console.log = inputFromUser;
+
+// div id return9 // funkcja anonimowa 
+ 
+    const fn = function(messageForUser) {
+    const userInput = prompt(messageForUser);
+    return userInput;
+    }
+    const inputFromUser = fn('Ile masz lat?');
+    console.log(inputFromUser);
+
+// div id return10  callback- funkacja, która jest przekazywana jako parametr lub też parametr innej funkcji
+const getUserInput = function(message) {
+    return prompt(message);
+   }
+   const sumNumbersFromUser = function(userInputFn) {
+    const a = userInputFn('Podaj liczbę a'); //    Wywołanie userInputFn() w ciele funkcji tak naprawdę oznacza uruchomienie getUserInput().To jest tzw. wywołanie zwrotne tj callback.
+
+    const b = userInputFn('Podaj liczbę b');
+    const sum = parseFloat(a) + parseFloat(b);
+    return sum;
+   }
+   const result = sumNumbersFromUser(getUserInput);
+   console.log(result);
+
+// div id return10 callback jako funkcja anonimowa
+
+const sumNumbersFromUser = function(userInputFn) {
+    const a = userInputFn('Podaj liczbę a');
+    const b = userInputFn('Podaj liczbę b');
+    const sum = parseFloat(a) + parseFloat(b);
+    return sum;
+   }
+   const result = sumNumbersFromUser(function(message) {
+    return prompt(message);
+   });
+   console.log(result);
+
+// div id return11 
+
+   function calc(a, b, callback){
+       console.log('calc', a, b, //callback()//   po dopisaniu a,b  funkcja już się wywołuje
+                  )
+        const res = callback();
+        console.log(res);                            // wywołanie callback jako unidentifed
+   }
+
+   calc(1, 2, function() {
+       console.log('wywołanie'); /// to nie będzie widoczne w konsoli. Ta funkcja nie została wywołana. 
+                                // ta funkcja jest wartością, obiektem
+        return 22; 
+   });
+
+
+
+
+
     // [1, 2, 3].forEach(function(el){
     //     console.log(el);                /// to jest to samo
     // } );                             
